@@ -1,0 +1,22 @@
+﻿@using AspNetMvcCms.Entities.BaseModels
+@using AspNetMvcCms.Entities
+
+@model PageData
+
+<h1>@Model.Name</h1>
+
+<ul>
+@foreach (var menuLink in Model.MenuLinks)
+{
+    <li><a href="#">@menuLink.Text</a></li>     
+}
+</ul>
+
+<ul>
+    @foreach (var block in Model.Blocks)
+    {
+        <li><h3>@block.Name</h3></li>
+        <li>@block.BlockDetail.Author</li>
+        <li>@block.BlockDetail.CreationDate</li> 
+    }
+</ul>
